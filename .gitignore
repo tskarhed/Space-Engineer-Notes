@@ -1,0 +1,5 @@
+#Ignore temporary files that aends with tilde#
+*~
+
+#Ignore DS store#
+.DS_Store
