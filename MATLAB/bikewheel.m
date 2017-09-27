@@ -5,8 +5,8 @@ function bikewheel(radius, v, angle)
 
 %drawCircle(radius, [0 radius]);
 hold on;
-
-points = linspace(0, 2*pi, 12);
+for r = linspace(2*pi, 200*pi, 10000)
+points = linspace(r-2*pi, r, 12);
 
 [x y] = getCirclePoint(radius, points, [0 radius]);
 plot(x, y, 'yp', 'MarkerSize', 25, 'MarkerFaceColor', [1 204/255 0]);
@@ -16,6 +16,8 @@ set(gca, 'color', [0 51/255 153/255]);
 axis([-3*radius 3*radius -radius 3*radius ]);
 axis equal
 hold off;
+pause(0.001);
+end
 
 end
 
