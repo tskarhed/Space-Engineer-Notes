@@ -14,6 +14,7 @@ points = linspace(0, 2*pi);
 
 index = 1;
 angles = zeros(1, numel(points));
+slopes = zeros(1, numel(points));
 for alpha = points
 
   
@@ -23,7 +24,11 @@ for alpha = points
     [ point1x, point1y ] = getCirclePoint(radius, alpha-0.1, center);
     [ point2x, point2y ] = getCirclePoint(radius, alpha+0.1, center);
     slope = (point2y-point1y)/(point2x-point1x);
+    slopes(index) = slope;
     angles(index) = atan(slope);
+    disp('Slope:');
+    disp(slope);
+    disp('Angle:');
     disp(angles(index));
     
     %Draw the trajectory
@@ -33,8 +38,11 @@ for alpha = points
     index = index +1;
 end
 
+figure(2);
+plot(linspace(0,100, numel(slopes)), angles);
+
 gcf;
-plot(x, y, 'yp', 'MarkerSize', 25, 'MarkerFaceColor', [1 204/255 0]);
+%plot(x, y, 'yp', 'MarkerSize', 25, 'MarkerFaceColor', [1 204/255 0]);
 
 set(gca, 'color', [0 51/255 153/255]);
 
