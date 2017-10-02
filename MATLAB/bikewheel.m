@@ -33,18 +33,18 @@ for alpha = points
     
     %Draw the trajectory
     [startX, startY] = getCirclePoint(radius, alpha, center);
-    drawTrajectory(atan(slope), v, [startX startY]);
+    drawTrajectory(angles(index), v, [startX startY]);
     %Set index
     index = index +1;
 end
 
-figure(2);
-plot(linspace(0,100, numel(slopes)), angles);
+%figure(2);
+%plot(linspace(0,100, numel(slopes)), angles);
 
 gcf;
 %plot(x, y, 'yp', 'MarkerSize', 25, 'MarkerFaceColor', [1 204/255 0]);
 
-set(gca, 'color', [0 51/255 153/255]);
+%set(gca, 'color', [0 51/255 153/255]);
 
 %axis([-3*radius 3*radius -radius 3*radius ]);
 axis equal
