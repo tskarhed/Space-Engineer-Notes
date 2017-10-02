@@ -26,6 +26,9 @@ for alpha = points
     angles(index) = atan(slope);
     disp(angles(index));
     
+    %Draw the trajectory
+    [startX, startY] = getCirclePoint(radius, alpha, center);
+    drawTrajectory(atan(slope), v, [startX startY]);
     %Set index
     index = index +1;
 end
