@@ -1,7 +1,8 @@
-function drawAtmosphere( input_args )
+function drawAtmosphere()
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-
+%area(100, 500);
+%Create
 
 %Troposphere 12000m
 

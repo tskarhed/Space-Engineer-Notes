@@ -3,12 +3,17 @@ function bikewheel(radius, v, angle)
 %assignment
 %   Detailed explanation goes here gvolllll00
 
+
+
 center = [radius radius];
 
-drawCircle(radius, center);
 hold on;
+drawAtmosphere();
+drawCircle(radius, center);
 
-points = linspace(0, 2*pi);
+i = 2*pi;
+while true
+points = linspace(i-2*pi, i);
 
 [x, y] = getCirclePoint(radius, points, center);
 
@@ -44,7 +49,10 @@ for alpha = points
     %Set index
     index = index +1;
 end
-
+hold off;
+i = i + 0.001;
+pause(0.001);
+end%End animation loop
 %figure(2);
 %plot(linspace(0,100, numel(slopes)), angles);
 

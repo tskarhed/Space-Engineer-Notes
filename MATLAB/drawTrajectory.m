@@ -18,7 +18,7 @@ while y0 >= 0
     y0 = y(t);
     %Increase time with a very small step to have a good resolution of the
     %answer
-    t = t+0.1;
+    t = t+0.001;
 end
 
 
@@ -28,8 +28,6 @@ points = linspace(0, t);
 x = @(t) startPoint(1) + velocity*cos(angle)*t;
 
 plot(x(points), y(points));
-
-
 
 end
 
