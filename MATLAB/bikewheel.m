@@ -25,7 +25,14 @@ for alpha = points
     [ point2x, point2y ] = getCirclePoint(radius, alpha+0.1, center);
     slope = (point2y-point1y)/(point2x-point1x);
     slopes(index) = slope;
-    angles(index) = atan(slope);
+    
+    %-pi for angles gives us a positive angle in the opposite direction. It
+    %works ;)
+    if (pi < alpha) && (alpha < 2*pi)
+       angles(index) = atan(slope)-pi;
+    else
+       angles(index) = atan(slope);
+    end
     disp('Slope:');
     disp(slope);
     disp('Angle:');
