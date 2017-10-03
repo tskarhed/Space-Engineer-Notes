@@ -18,7 +18,7 @@ while y0 >= 0
     y0 = y(t);
     %Increase time with a very small step to have a good resolution of the
     %answer
-    t = t+0.00001;
+    t = t+0.1;
 end
 
 
