@@ -10,7 +10,7 @@ hold on;
 
 %points = randi(100, 1, 20);
 points = linspace(0, 2*pi);
-points
+%points
 [x, y] = getCirclePoint(radius, points, center);
 
 index = 1;
@@ -32,18 +32,18 @@ for alpha = points
     
     %Redistribute alpha to get in the interval [0, 2*pi]
     redAlpha = wrapTo2Pi(alpha);
-    alpha
-    redAlpha
+    %alpha
+    %redAlpha
     
     if (pi < redAlpha) && (redAlpha < 2*pi)
        angles(index) = atan(slope)-pi;
     else
        angles(index) = atan(slope);
     end
-    disp('Slope:');
-    disp(slope);
-    disp('Angle:');
-    disp(angles(index));
+    %disp('Slope:');
+    %disp(slope);
+    %disp('Angle:');
+    %disp(angles(index));
     
     %Draw the trajectory
     [startX, startY] = getCirclePoint(radius, alpha, center);
@@ -62,7 +62,14 @@ gcf;
 
 %axis([-3*radius 3*radius -radius 3*radius ]);
 axis equal
+title('Cykelstänk', 'fontsize', 20);
+xlabel('Längd [m]', 'fontsize', 18);
+ylabel('Höjd [m]', 'fontsize', 18);
 hold off;
+
+axis(ay, 'tight');
+
+disp('Done!');
 
 end
 
