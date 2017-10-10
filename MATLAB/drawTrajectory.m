@@ -17,11 +17,15 @@ y0 = y(t);
 while y0 >= 0
     y0 = y(t);
     %Increase time with a very small step to have a good resolution of the
-    %answer
+   %answer
     t = t+0.00001;
 end
 
-
+%%%THIS STUFF WORKS, BUT IT IS SLOW%%%
+%syms altT; %Creates a "placeholder" variable
+%equation = startPoint(2) + velocity*sin(angle)*altT-(g*altT^2)/2;%Equation where it hits the ground
+%times = double(solve(equation, altT));%Solve the equation and give it a numerical value
+%t = max(times); %Select the positive value
 
 points = linspace(0, t);
 

@@ -1,15 +1,15 @@
 function bikewheel(radius, v, angle)
 %Takes the radius and simulation and stuff... Look ot the goddamn
 %assignment
-%   Detailed explanation goes here gvolllll00
+%Detailed explanation goes here
 
 center = [radius radius];
 
 drawCircle(radius, center);
 hold on;
 
-points = randi(100, 1, 20);
-%points = linspace(0, 2*pi);
+%points = randi(100, 1, 20);
+points = linspace(0, 2*pi);
 points
 [x, y] = getCirclePoint(radius, points, center);
 
