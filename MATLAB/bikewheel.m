@@ -67,8 +67,6 @@ xlabel('Längd [m]', 'fontsize', 18);
 ylabel('Höjd [m]', 'fontsize', 18);
 hold off;
 
-axis(ay, 'tight');
-
 disp('Done!');
 
 end
