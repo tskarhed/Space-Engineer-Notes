@@ -1,6 +1,5 @@
 function drawCircle( radius, center )
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+%Draws a circle
 
 angle = linspace(0, 2*pi);
 

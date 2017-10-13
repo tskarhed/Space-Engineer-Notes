@@ -1,4 +1,4 @@
-function drawTrajectory( angle, velocity, startPoint )
+function [length, height] = drawTrajectory( angle, velocity, startPoint )
 %Draws the trajectory of a particle which starts att [x y] = startPoint
 %with an angle and a velocity.
 %   Detailed explanation goes here
@@ -11,7 +11,9 @@ g = 9.82;
 y = @(t) startPoint(2) + velocity*sin(angle)*t - (g*t.^2)/2;
 
 %Find trajectory end
-%Loop over y(t) and try values until they are equal to 0 (hit the ground)
+%Loop over y(t) and try values until they are equal to 0 (hit the ground).
+%This solution is not good for big values of velocity, but realistically it
+%would probably not exceed 20m/s
 t=0;
 y0 = y(t);
 while y0 >= 0
@@ -26,6 +28,10 @@ end
 %equation = startPoint(2) + velocity*sin(angle)*altT-(g*altT^2)/2;%Equation where it hits the ground
 %times = double(solve(equation, altT));%Solve the equation and give it a numerical value
 %t = max(times); %Select the positive value
+
+%Return the length/height of the parabola (in meters)
+length = startPoint(1) + velocity*cos(angle)*t;
+height = startPoint(2) + velocity*sin(angle)*t-(g*t^2)/2;
 
 points = linspace(0, t);
 
